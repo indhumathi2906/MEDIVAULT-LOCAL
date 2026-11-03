@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', Menlo, Consolas, monospace;
+}
+
+@layer base {
+  :root {
+    --bg-canvas: #f8fafc;
+    --bg-card: #ffffff;
+    --border-subtle: #e2e8f0;
+    --text-primary: #0b132b;
+    --text-muted: #64748b;
+  }
+
+  .dark {
+    --bg-canvas: #090e1a;
+    --bg-card: #0f172a;
+    --border-subtle: #1e293b;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+/* Medical ECG pulse animation */
+@keyframes ecgPulse {
+  0% {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-ecg {
+  stroke-dasharray: 600;
+  animation: ecgPulse 3s linear infinite;
+}
+
+/* Printable Certificate styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .printable-certificate {
+    box-shadow: none !important;
+    border: 2px solid #000 !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    page-break-inside: avoid;
+  }
+}

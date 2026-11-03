@@ -1,0 +1,8 @@
+{
+  "name": "MEDIVAULT",
+  "description": "A Centralized Digital Healthcare Management System connecting patients, physicians, and clinical administrators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
