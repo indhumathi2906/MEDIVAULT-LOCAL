@@ -65,6 +65,13 @@ npm run dev
 ```
 Open your browser to `http://localhost:5173`.
 
+#### Connecting the frontend to a deployed backend
+The frontend reads its API base URL from `VITE_API_BASE_URL`. Set it to your backend's URL including `/api`, for example:
+```env
+VITE_API_BASE_URL=https://your-backend-domain.com/api
+```
+For local development, create `client/.env.local` with that value; otherwise the app defaults to `/api` and uses the Vite proxy above. For a deployed frontend, add `VITE_API_BASE_URL` to the hosting provider's environment variables and rebuild/redeploy the frontend. The backend must allow requests from the deployed frontend's origin.
+
 ---
 
 ## 🔑 One-Click Demo Profiles & Credentials
